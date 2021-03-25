@@ -18,3 +18,10 @@ class Ship:
     def blitme(self):
         """Draw the ship at its current location."""
         self.screen.blit(self.image, self.rect)
+
+# Note:
+# In Pygame, the origin (0, 0) is at the top-left corner of the screen, and
+# coordinates increase as you go down and to the right. On a 1200 by 800
+# screen, the origin is at the top-left corner, and the bottom-right corner has
+# the coordinates (1200, 800). These coordinates refer to the game window, not
+# the physical screen.
