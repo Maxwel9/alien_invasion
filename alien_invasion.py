@@ -25,7 +25,7 @@ class AlienInvasion:
         while True:
             self._check_events()
             self.ship.update()
-            self._update_screen()          
+            self._update_screen()
 
     def _check_events(self):
         """Responds to keypresses and mouse events."""
