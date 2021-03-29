@@ -103,3 +103,10 @@ if __name__ == '__main__':
 # Note:
 # Make sure you can quit by pressing Q before running the game in fullscreen
 # mode; Pygame offers no default way to quit a game while in fullscreen mode.
+
+# Note:
+# One great aspect of calculations in programming is that you don't have to be
+# sure your formulas are correct when you first write them. You can try them
+# out and see if they work. At worst, you'll have a sreen that's overcrowded
+# width aliens or has too few aliens. You can then revise your calculations
+# based on what you see on the screen.
