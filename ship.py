@@ -38,9 +38,19 @@ class Ship:
         """Draw the ship at its current location."""
         self.screen.blit(self.image, self.rect)
 
+    def center_ship(self):
+        """Center the ship on the screen."""
+        self.rect.midbottom = self.screen_rect.midbottom
+        self.x = float(self.rect.x)
+
 # Note:
 # In Pygame, the origin (0, 0) is at the top-left corner of the screen, and
 # coordinates increase as you go down and to the right. On a 1200 by 800
 # screen, the origin is at the top-left corner, and the bottom-right corner has
 # the coordinates (1200, 800). These coordinates refer to the game window, not
 # the physical screen.
+
+# Note:
+# Notice that we never make more than one ship; we make only one ship instance
+# for the whole game and recenter it whenever the ship has been hit. The
+# statistics ships_left will tell us when the player has run out of ships.
