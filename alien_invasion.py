@@ -132,6 +132,7 @@ class AlienInvasion:
             for aliens in collisions.values():
                 self.stats.score += self.settings.alien_points * len(aliens)
             self.sb.prep_score()
+            self.sb.prep_level()
             self.sb.check_high_score()
 
         if not self.aliens:
@@ -139,6 +140,10 @@ class AlienInvasion:
             self.bullets.empty()
             self._create_fleet()
             self.settings.increase_speed()
+
+            # Increase level.
+            self.stats.level += 1
+            self.sb.prep_level()
 
     def _update_aliens(self):
         """
@@ -263,3 +268,9 @@ if __name__ == '__main__':
 # Note:
 # Depending on the screen width you've chosen, the alignement of the first row
 # of aliens might look slightly different on your system.
+
+# Note:
+# In some classic games, the scores have labels, such as Score, High Score,
+# and Level. We've omitted these labels because the meaning of each number
+# becomes clear once you've played the game. To include these labels, add them
+# to the score strings just before the calls to font.render() in Scoreboard.
