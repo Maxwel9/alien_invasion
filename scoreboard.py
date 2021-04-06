@@ -1,3 +1,5 @@
+import json
+
 import pygame.font
 from pygame.sprite import Group
 
@@ -73,6 +75,19 @@ class Scoreboard:
         if self.stats.score > self.stats.high_score:
             self.stats.high_score = self.stats.score
             self.prep_high_score()
+
+    def save_high_score(self):
+        """Get stored the high score."""
+        try:
+            with open('current_high_score.json') as f:
+                contents = json.load(f)
+        except (FileNotFoundError, ValueError):
+            with open('current_high_score.json', 'w') as f:
+                json.dump(self.stats.high_score, f)
+        else:
+            if contents < self.stats.high_score:
+                with open('current_high_score.json', 'w') as f:
+                    json.dump(self.stats.high_score, f)
 
     def show_score(self):
         """Draw scores, level and ships to the screen."""
